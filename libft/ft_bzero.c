@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: godendaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/06 11:57:02 by godendaa          #+#    #+#             */
-/*   Updated: 2018/06/06 12:51:39 by godendaa         ###   ########.fr       */
+/*   Created: 2018/06/06 13:07:34 by godendaa          #+#    #+#             */
+/*   Updated: 2018/06/06 13:11:20 by godendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
+#include <string.h>
 
-# include <stdlib.h>
-# include <unistd.h>
+void	ft_bzero(void *str, size_t n)
+{
+	size_t i;
 
-void	ft_putchar(char c);
-void	ft_putstr(char const *s);
-void	ft_putnbr(int n);
-
-#endif
+	i = 0;
+	while (i < n)
+	{
+		((unsigned char*)str)[i] = 0;
+		i++;
+	}
+}

@@ -1,23 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: godendaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/06 11:57:02 by godendaa          #+#    #+#             */
-/*   Updated: 2018/06/06 12:51:39 by godendaa         ###   ########.fr       */
+/*   Created: 2018/06/06 12:50:44 by godendaa          #+#    #+#             */
+/*   Updated: 2018/06/06 12:50:46 by godendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
+#define MAX (2147483647)
+#define MIN (-2147483648)
 
-void	ft_putchar(char c);
-void	ft_putstr(char const *s);
-void	ft_putnbr(int n);
-
-#endif
+void	ft_putnbr(int n)
+{
+	if (n > MAX || n < MIN)
+		return ;
+	if (n == MIN)
+	{
+		ft_putstr("-2147483648");
+		return ;
+	}
+	if (n < 0)
+	{
+		n = -n;
+		ft_putchar('-');
+	}
+	if (n < 10)
+	{
+		ft_putchar(n + 48);
+		return ;
+	}
+	ft_putnbr(n / 10);
+	ft_putchar((n % 10) + 48);
+	return ;
+}

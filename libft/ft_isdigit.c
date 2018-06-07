@@ -16,9 +16,3 @@ int	ft_isdigit(char c)
 {
 	return (c >= 48 && c <= 57);
 }
-
-int	main()
-{
-	ft_putnbr(ft_isdigit('9'));
-	return (0);
-}

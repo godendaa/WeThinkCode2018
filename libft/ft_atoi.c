@@ -1,22 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: godendaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/07 12:11:04 by godendaa          #+#    #+#             */
-/*   Updated: 2018/06/07 12:53:11 by godendaa         ###   ########.fr       */
+/*   Created: 2018/06/06 14:16:33 by godendaa          #+#    #+#             */
+/*   Updated: 2018/06/06 14:20:22 by godendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(char c)
+#DEFINE MIN –2147483648 
+#DEFINE MAX 2147483647
+
+int	ft_atoi(char const *s)
 {
-	if (c >= 48 && c <= 57)
-		return (1);
-	else if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
+	int i;
+	int result;
+
+	i = 0;	
+	result = 0;
+	while (s[i]) 
+	{
+		if (result *  10 < result)
+			return (0);
+		else
+		{
+			result = result + (s[i] * 10);
+		}
+		i++;
+	}
+	return (result / 10);
+}
+
+int	main() 
+{
+	ft_putnbr(ft_atoi("96854"));
 	return (0);
 }

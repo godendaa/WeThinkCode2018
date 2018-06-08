@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: godendaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/06 14:16:33 by godendaa          #+#    #+#             */
-/*   Updated: 2018/06/08 14:59:46 by godendaa         ###   ########.fr       */
+/*   Created: 2018/06/08 14:01:14 by godendaa          #+#    #+#             */
+/*   Updated: 2018/06/08 14:02:55 by godendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+void	ft_strclr(char *s)
 {
-	unsigned char *len;
+	int i;
 
-	len = (unsigned char*)malloc(sizeof(char) * size);
-	if (len == NULL)
-		return (NULL);
-	return (ft_memset(len, 0, size));
+	i = 0;
+	while (s != NULL && s[i])
+	{
+		s[i] = '\0';
+		i++;
+	}
 }

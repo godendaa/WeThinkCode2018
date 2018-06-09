@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: godendaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/08 13:46:53 by godendaa          #+#    #+#             */
-/*   Updated: 2018/06/09 11:56:39 by godendaa         ###   ########.fr       */
+/*   Created: 2018/06/09 10:10:30 by godendaa          #+#    #+#             */
+/*   Updated: 2018/06/09 12:04:59 by godendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char *ps1;
-	char *ps2;
+	char	*str;
+	int		len;
 
-	ps1 = (char *)s1;
-	ps2 = (char *)s2;
-	while (*ps1)
-		ps1++;
-	while (*ps2)
-		*(ps1++) = *(ps2++);
-	*ps1 = '\0';
-	return (s1);
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
+	len = ft_strlen(s1) + ft_strlen(s2);
+	str = (char *)malloc(sizeof(*str) * (len + 1));
+	if (str == NULL)
+		return (NULL);
+	ft_strcpy(str, s1);
+	ft_strcat(str, s2);
+	return (str);
 }

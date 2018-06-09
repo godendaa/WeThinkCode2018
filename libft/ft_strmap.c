@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: godendaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/08 13:46:53 by godendaa          #+#    #+#             */
-/*   Updated: 2018/06/09 11:56:39 by godendaa         ###   ########.fr       */
+/*   Created: 2018/06/09 10:27:34 by godendaa          #+#    #+#             */
+/*   Updated: 2018/06/09 10:32:10 by godendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	char *ps1;
-	char *ps2;
+	char			*new;
+	unsigned int	i;
 
-	ps1 = (char *)s1;
-	ps2 = (char *)s2;
-	while (*ps1)
-		ps1++;
-	while (*ps2)
-		*(ps1++) = *(ps2++);
-	*ps1 = '\0';
-	return (s1);
+	if (s == NULL)
+		return (NULL);
+	new = ft_strnew(ft_strlen(s));
+	if (new == NULL)
+		return (NULL);
+	i = 0;
+	while (s[i])
+	{
+		new[i] = f(s[i]);
+		i++;
+	}
+	return (new);
 }

@@ -5,22 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: godendaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/08 10:20:06 by godendaa          #+#    #+#             */
-/*   Updated: 2018/06/08 10:21:38 by godendaa         ###   ########.fr       */
+/*   Created: 2017/05/29 19:55:43 by godendaa          #+#    #+#             */
+/*   Updated: 2017/06/10 04:02:36 by godendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char	const *s, int fd)
+void	ft_putendl_fd(const char *s, int fd)
 {
-	int i;
-
-	i = 0;
-	while (s[i])
-	{
-		ft_putchar_fd(s[i], fd);
-		i++;
-	}
-	ft_putchar('\n');
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: godendaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/08 13:46:53 by godendaa          #+#    #+#             */
-/*   Updated: 2018/06/09 11:56:39 by godendaa         ###   ########.fr       */
+/*   Created: 2018/06/09 11:38:26 by godendaa          #+#    #+#             */
+/*   Updated: 2018/06/09 11:44:10 by godendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+char	*ft_strrchr(const char *s, int c)
 {
-	char *ps1;
-	char *ps2;
+	int i;
 
-	ps1 = (char *)s1;
-	ps2 = (char *)s2;
-	while (*ps1)
-		ps1++;
-	while (*ps2)
-		*(ps1++) = *(ps2++);
-	*ps1 = '\0';
-	return (s1);
+	i = ft_strlen(s);
+	while (i >= 0)
+	{
+		if (s[i] == c)
+			return ((char *)(s + i));
+		i--;
+	}
+	return (NULL);
 }

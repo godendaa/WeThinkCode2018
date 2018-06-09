@@ -6,13 +6,13 @@
 /*   By: godendaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/07 12:11:04 by godendaa          #+#    #+#             */
-/*   Updated: 2018/06/08 08:57:50 by godendaa         ###   ########.fr       */
+/*   Updated: 2018/06/09 11:57:49 by godendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(char c)
+int	ft_isalnum(int c)
 {
 	if (c >= 48 && c <= 57)
 		return (1);

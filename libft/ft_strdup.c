@@ -6,7 +6,7 @@
 /*   By: godendaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/09 09:51:27 by godendaa          #+#    #+#             */
-/*   Updated: 2018/06/09 10:06:16 by godendaa         ###   ########.fr       */
+/*   Updated: 2018/06/09 12:14:07 by godendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ char		*ft_strdup(const char *s1)
 		i++;
 	size = i + 1;
 	i = 0;
-	dest = ft_memalloc(size);
+	if (!(dest = ft_memalloc(size)))
+		return (NULL);
 	while (s1[i])
 	{
 		dest[i] = s1[i];

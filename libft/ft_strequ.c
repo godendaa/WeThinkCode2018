@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: godendaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/09 09:51:27 by godendaa          #+#    #+#             */
-/*   Updated: 2018/06/09 10:06:16 by godendaa         ###   ########.fr       */
+/*   Created: 2018/06/09 08:46:14 by godendaa          #+#    #+#             */
+/*   Updated: 2018/06/09 08:51:05 by godendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft.h
 
-char		*ft_strdup(const char *s1)
+int	ft_strequ(char const *s1, char const *s2)
 {
-	int		i;
-	size_t	size;
-	char	*dest;
+	int i;
 
-	size = 0;
 	i = 0;
-	while (s1[i])
-		i++;
-	size = i + 1;
-	i = 0;
-	dest = ft_memalloc(size);
-	while (s1[i])
+	if (s1 == NULL || s2 == NULL)
+		return (0);
+	while (s1[i] == s2[i] && s1[i] && s2[i])
 	{
-		dest[i] = s1[i];
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	if (s1[i] == s2[i])
+		return (1);
+	return (0);
 }

@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: godendaa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/09 09:51:27 by godendaa          #+#    #+#             */
-/*   Updated: 2018/06/09 10:06:16 by godendaa         ###   ########.fr       */
+/*   Created: 2018/06/09 08:52:45 by godendaa          #+#    #+#             */
+/*   Updated: 2018/06/09 08:55:01 by godendaa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strdup(const char *s1)
+void	ft_striter(char *s, void (*f)(char *))
 {
-	int		i;
-	size_t	size;
-	char	*dest;
+	int i;
 
-	size = 0;
 	i = 0;
-	while (s1[i])
-		i++;
-	size = i + 1;
-	i = 0;
-	dest = ft_memalloc(size);
-	while (s1[i])
+	if ((s != NULL) && (f != NULL))
 	{
-		dest[i] = s1[i];
-		i++;
+		while (s[i])
+		{
+			f(&s[1]);
+			i++;
+		}
 	}
-	dest[i] = '\0';
-	return (dest);
 }
